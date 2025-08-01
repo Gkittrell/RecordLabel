@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Kittrell Live | Music Stage</title>
+  <style>/* Variables */
+:root {
+  --bg-dark: #1a1a1a;
+  --bg-light: #fafafa;
+  --accent: #b58b4c;
+  --highlight: #d9a441;
+  --text-light: #f5efe3;
+  --text-dark: #222;
+  --transition: 0.3s ease;
+  --radius: 0.5rem;
+  --font: 'Poppins', sans-serif;
+}
+
+/* Base */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  transition: background-color var(--transition), color var(--transition);
+}
+
+body.light {
+  background-color: var(--bg-light);
+  color: var(--text-dark);
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header & Hero */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: rgba(30, 30, 30, 0.8);
+  backdrop-filter: blur(10px);
+  padding: 1rem 0;
+}
+
+.logo {
+  margin: 0;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: var(--text-light);
+}
+
+.mode-toggle {
+  background: var(--accent);
+  border: none;
+  padding: 0.5rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: transform var(--transition);
+}
+
+.mode-toggle:hover {
+  transform: scale(1.1);
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero {
+  background: url('concert.jpg') center/cover no-repeat;
+  height: 25vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero h2 {
+  position: relative;
+  color: #fff;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+/* Track grid */
+.track-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  padding: 3rem 0;
+}
+
+.track-card {
+  background-color: rgba(0,0,0,0.4);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1rem;
+  text-align: center;
+  transition: background-color var(--transition), transform var(--transition);
+}
+
+.track-card img {
+  width: 100%;
+  border-radius: var(--radius);
+  margin-bottom: 0.5rem;
+}
+
+.track-card h3 {
+  margin: 0.5rem 0;
+  font-weight: 500;
+}
+
+.track-card audio {
+  width: 100%;
+  outline: none;
+}
+
+/* Hover effects */
+.track-card:hover {
+  background-color: rgba(0,0,0,0.6);
+  transform: translateY(-4px);
+}
+
+/* Footer */
+.site-footer {
+  text-align: center;
+  padding: 1.5rem 0;
+  background-color: #111;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* Light mode overrides */
+body.light .site-header {
+  background-color: rgba(245,245,245,0.8);
+}
+
+body.light .site-footer {
+  background-color: #eee;
+  color: #555;
+}
+
+body.light .track-card {
+  background-color: rgba(255,255,255,0.6);
+}
+
+body.light .track-card:hover {
+  background-color: rgba(255,255,255,0.8);
+}
+</style>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="logo">GKRecords</h1>
+      <button class="mode-toggle" aria-label="Toggle light/dark mode">🌓</button>
+    </div>
+    <div class="hero">
+      <h2>Where Music Comes Alive</h2>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <section class="track-grid container">
+      <article class="track-card">
+        <img src="snakeandcats.png" alt="Slither and Dream album art" />
+        <h3>Slither and Dream</h3>
+        <audio controls>
+          <source src="Slither and Dream.mp3" type="audio/mp3" />
+        </audio>
+      </article>
+
+      <article class="track-card">
+        <img src="Drworm.png" alt="Doctor.Worm" />
+        <h3>Doctor Worm</h3>
+        <audio controls>
+          <source src="Doctor Worm.mp3" type="audio/mp3" />
+        </audio>
+      </article>
+
+      <article class="track-card">
+        <img src="HardHat.png" alt="HardHat album art" />
+        <h3>Hard Hat Harmony</h3>
+        <audio controls>
+          <source src="Hard Hat Harmony.mp3" type="audio/mp3" />
+        </audio>
+      </article>
+    </section>
+  </main>
+
+   <main class="site-main">
+    <section class="track-grid container">
+      <article class="track-card">
+        <img src="Jazz Chicken.png" alt="Chicken Parm" />
+        <h3>Chicken Parm Noir</h3>
+        <audio controls>
+          <source src="Chicken Parm Noir.mp3" type="audio/mp3" />
+        </audio>
+      </article>
+
+      <article class="track-card">
+        <img src="Midnight Scare.png" alt="Midnight Scare" />
+        <h3>Shadow Waltz</h3>
+        <audio controls>
+          <source src="Shadow Waltz.mp3" type="audio/mp3" />
+        </audio>
+      </article>
+
+      <article class="track-card">
+        <img src="horde.png" alt="horde album art" />
+        <h3>The $20Horde Sea Shanty</h3>
+        <audio controls>
+          <source src="The $20Horde Sea Shanty.mp3" type="audio/mp3" />
+        </audio>
+      </article>
+    </section>
+  </main>
+
+   <main class="site-main">
+    <section class="track-grid container">
+      <article class="track-card">
+        <img src="DejaQueElTiempo.png" alt="DejaQueElTiempo" />
+        <h3>Deja Que El Tiempo</h3>
+        <audio controls>
+          <source src="Deja que el tiempo flote ext v1.mp3" type="audio/mp3" />
+        </audio>
+      </article>
+
+      <article class="track-card">
+        <img src="Stay_A_While.png" alt="Stay A While" />
+        <h3>Stay a While PT.1</h3>
+        <audio controls>
+          <source src="Stay a Little Longer ext v1.mp3" type="audio/mp3" />
+        </audio>
+      </article>
+
+      <article class="track-card">
+        <img src="StayAwhilePT2.png" alt="Stay A While PT2." />
+        <h3>Stay A While PT2.</h3>
+        <audio controls>
+          <source src="Stay a Little Longer ext v2.mp3" type="audio/mp3" />
+        </audio>
+      </article>
+
+       <article class="track-card">
+        <img src="Whispering Rivers.png" alt="Whispering Rivers" />
+        <h3>Whispering Rivers</h3>
+        <audio controls>
+          <source src="Keep It Alive.mp3" type="audio/mp3" />
+        </audio>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    © 2025 Kittrell Live. All Rights Reserved.
+  </footer>
+
+  <script>
+    // Prevent multiple tracks playing at once
+    const audios = document.querySelectorAll('audio');
+    audios.forEach(a => {
+      a.addEventListener('play', () => {
+        audios.forEach(b => { if (b !== a) b.pause(); });
+      });
+    });
+
+    // Dark/light mode toggle
+    const toggle = document.querySelector('.mode-toggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('light');
+    });
+  </script>
+</body>
+</html>
